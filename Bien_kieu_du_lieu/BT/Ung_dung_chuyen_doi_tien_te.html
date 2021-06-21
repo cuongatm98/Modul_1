@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+<form>
+    <tr>
+        <td><input id="sotien" type="text" placeholder="nhập số tiền"></td>
+        <td><select id="so1">
+            <option value="23000">VND</option>
+            <option value="1">USD</option>
+        </select></td>
+        <td><select id="so2">
+            <option value="1">USD</option>
+            <option value="23000">VND</option>
+        </select></td>
+        <td><button id="click" onclick="chuyentien()" type="button">Click</button></td>
+    </tr>
+    <div id="kq"> Bằng : </div>
+   <script>
+
+   function chuyentien() {
+       let so1 = document.getElementById("so1").value;
+       let so2 =document.getElementById("so2").value;
+       let sotien = document.getElementById("sotien").value;
+       let ketqua = document.getElementById("kq").innerHTML;
+       if (sotien !== so1) {
+          ketqua=sotien/so1*so2
+          document.getElementById("kq").innerHTML= ketqua ;
+       }
+       }
+   chuyentien();
+   </script>
+</form>
+</body>
+</html>

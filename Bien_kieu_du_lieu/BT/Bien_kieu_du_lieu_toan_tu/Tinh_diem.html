@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính điểm tổng và trung bình của học sinh</title>
+</head>
+<body>
+<script>
+    let toan = parseFloat(prompt("nhập điểm môn Toán"));
+    let li = parseFloat(prompt("nhập điểm môn Li"));
+    let hoa = parseFloat(prompt("nhập điểm môn Hóa"));
+    function tinhdiem() {
+        tong=toan+li+hoa;
+        tb = tong / 3
+        document.write("tổng điểm là : " + tong +"<br/>");
+        document.write("điểm trung bình là : " + tb +"<br/>");
+    }
+    tinhdiem(toan,li,hoa)
+</script>
+</body>
+</html>
