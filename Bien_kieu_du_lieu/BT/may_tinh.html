@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<input id="so1" type="number" placeholder="Số">
+<select id="pheptinh">
+    <option value="*">x</option>
+    <option value="/">/</option>
+    <option value="+">+</option>
+    <option value="-">-</option>
+</select>
+<input id="so2" type="number" placeholder="Số">
+<button id="=" onclick="Maytinh()">=</button>
+<div id="kq">Kết quả</div>
+<script>
+    function Maytinh() {
+        let so1 = +document.getElementById("so1").value
+        let so2 = +document.getElementById("so2").value
+        let ketqua ;
+        let pheptinh = document.getElementById("pheptinh").value
+        if (pheptinh === "*") {
+            ketqua = so1 * so2;
+            document.getElementById("kq").innerText=ketqua
+        }if (pheptinh === "/") {
+            ketqua = so1 / so2;
+            document.getElementById("kq").innerText=ketqua
+        }if (pheptinh === "+") {
+            ketqua = so1 + so2;
+            document.getElementById("kq").innerText=ketqua
+        }if (pheptinh === "-") {
+            ketqua = so1 - so2;
+            document.getElementById("kq").innerHTML=ketqua
+        }
+    }
+    Maytinh();
+</script>
 </body>
 </html>
