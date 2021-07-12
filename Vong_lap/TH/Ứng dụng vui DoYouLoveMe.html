@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/css">
+
+    #btnNo {
+        position: absolute;
+    }
+    h1{
+        font-size: 100px;
+    }
+   button{
+       background-color: #fa0c0c;
+       width:200px;
+       height: 100px;
+       margin: 20px 30px;
+       font-size: 60px;
+       color: #fefefe;
+    }
+   body{
+       text-align: center;
+       background-image: url(img/2.jpg);
+       background-repeat:initial;
+   }
+</style>
+<body>
+    <h1 style="color: #fd7e14">Do you love me?</h1>
+    <button type="submit" onclick="yes()">Yes</button>
+    <button onmouseover="no()" type="submit" id="btnNo">No</button>
+</body>
+
+<script>
+function yes() {
+    window.alert("Ước gì mình là mèo")
+}
+function no() {
+    var x = Math.floor(Math.random() * window.innerWidth);
+    var y = Math.floor(Math.random() * window.innerHeight);
+    document.getElementById("btnNo").style.left = x + "px";
+    document.getElementById("btnNo").style.top = y + "px";
+
+}
+</script>
+
+</html>

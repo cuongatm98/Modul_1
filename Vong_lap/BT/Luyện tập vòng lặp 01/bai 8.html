@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doan so</title>
+</head>
+<body>
+<button value="button" onclick="doanso()">start</button>
+<script>
+    function doanso() {
+        let number = prompt('doan so tu 1 den:');
+        let chooseNumber = Math.floor(Math.random() * number) + 1;
+        for (let i = 0; i < 5; i++) {
+            let guessNumber = prompt('nhap so muon doan la:');
+            if (guessNumber === chooseNumber) {
+                alert('ban da doan dung')
+                break;
+            } else if (guessNumber < chooseNumber) {
+                alert('nho hon!nhap lai')
+            } else {
+                alert('lon hon nhap lai')
+            }
+        }
+    }
+</script>
+</body>

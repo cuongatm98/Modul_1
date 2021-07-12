@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr style="font-size:50px">
+        <th>Lịch năm</th>
+    </tr>
+    <tr>
+        <td width="4"><select id="thang">
+            <option value="1">tháng 1</option>
+            <option value="2">tháng 2</option>
+            <option value="3">tháng 3</option>
+            <option value="4">tháng 4</option>
+            <option value="5">tháng 5</option>
+            <option value="6">tháng 6</option>
+            <option value="7">tháng 7</option>
+            <option value="8">tháng 8</option>
+            <option value="9">tháng 9</option>
+            <option value="10">tháng 10</option>
+            <option value="11">tháng 11</option>
+            <option value="12">tháng 12</option>
+        </select></td>
+        <td>
+            <button onclick="timSoNgay()">bấm để biết</button>
+        </td>
+    </tr>
+</table>
+   <h4 id="kq"></h4>
+    <script>
+       function timSoNgay(){
+           let month = document.getElementById('thang').value;
+           switch (month){
+               case "1":
+                   document.write("co 31 ngay");
+                   break;
+               case "2":
+                   document.write("co 28 ngay");
+                   break;
+               case "3":
+                   document.write("co 30 ngay");
+                   break;
+               case "4":
+                   document.write("co 31 ngay");
+                   break;
+               case "5":
+               case "6":
+                   document.write("co 30 ngay");
+                   break;
+               case "7":
+               case "8":
+               case "9":
+                   document.write("co 30 ngay");
+                   break;
+               case "10":
+               case "11":
+               case "12":
+                   document.write("co 31 ngay");
+           }
+       }
+    </script>
+
+</body>
+</html>

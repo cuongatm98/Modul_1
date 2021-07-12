@@ -1,0 +1,27 @@
+
+<!DOCTYPE htm l>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+      inputcannang = prompt("nhập cân nặng ...")
+      inputchieucao = prompt("nhập chiều cao")
+      let cannang = parseInt(inputcannang)
+      let chieucao = parseInt(inputchieucao)
+      let kq = cannang/(chieucao^2)
+      document.write("kết quả là:" + kq);
+      if (kq < 18)
+          document.write(" ;thiếu cân");
+      else if (kq < 25.0)
+          document.write(" ;bình thường");
+      else if (kq < 30.0)
+          document.write(" ;thừa cân");
+      else
+          document.write(" ;béo quá");
+  </script>
+
+</body>
+</html>
