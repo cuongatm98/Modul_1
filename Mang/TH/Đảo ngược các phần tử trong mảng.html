@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <script>
+   let x=[-3,-2,-1
+     ,0,1,2,3,9];
+   let a =  0;
+   let b = x.length-1;
+   while (a<b){
+     let b=x[a];
+        x[a]=x[b];
+        x[a]=b;
+        a++;
+        b--;
+   }
+   document.write(x);
+ </script>
+</body>
+</html>
