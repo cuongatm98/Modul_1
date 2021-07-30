@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ let arr = [0,5,7];
+ function minArray(arr) {
+     let Min=arr[0];
+   for (let i=0; i<=arr.length-1;i++){
+     if(arr[i]<Min){
+       Min=arr[i];
+       index = i ;
+     }
+   }
+   return Min
+ }
+ let Min = minArray(arr);
+ alert("gia tri nho nhat la :"+ Min)
+
+</script>
+</body>
+</html>

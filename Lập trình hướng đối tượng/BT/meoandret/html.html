@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="catandrat.js"></script>
+</head>
+<body>
+<script>
+    let Tom = new  Cat('Tom',100,50);
+    let Rats = [];
+    let Ratdie = [];
+    for (let i=0; i<10; i++){
+        let numberRandom = Math.floor(Math.random()*100);
+        let rat = new Rat(numberRandom, numberRandom, true);
+        Rats.push(rat);
+    }
+    for (let j = 0; j < Rats.length; j++) {
+        if (Tom.catch(Rats[j])){
+            Tom.eat(Rats[j]);
+            Ratdie.push(Rats[j]);
+        }
+        console.log(Tom.weight);
+    }
+    console.log(Ratdie);
+</script>
+
+</body>
+</html>

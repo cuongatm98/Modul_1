@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Objects</title>
+</head>
+<body>
+<div id="game"></div>
+<script>
+  function Hero(image, top, left, size,right,down){
+    this.image = image;
+    this.top = top;
+    this.left = left;
+    this.size = size;
+    this.right = right
+
+    this.getHeroElement = function(){
+      return '<img src="https://raw.githubusercontent.com/codegym-vn/objects/master/pikachu.png" width='+ this.size +
+              ' height="'+ this.size + '"' +
+              ' src="' + this.image +'"' +
+              ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+    }
+      this.moveRight = function(){
+          this.left += 100;
+          console.log('ok: ' + this.left);
+      }
+      this.moveTop = function (){
+      this.top +=60;
+      console.log('ok'+ this.top)
+      }
+      this.moveLeft = function (){
+      this.left-=80;
+      console.log('ok'+this.left)
+      }
+    this.moveUp = function (){
+      this.top-=80;
+      console.log('ok'+this.top)
+    }
+
+  }
+
+  var hero = new Hero('pikachu.png', 20, 30, 200);
+
+  function start(){
+      if(hero.left < window.innerWidth - hero.size){
+          hero.moveRight();
+      }else if(hero.top < window.innerHeight - hero.size){
+      hero.moveTop();
+      } else if(hero.left > 0) {
+          hero.moveLeft();
+      } else if (hero.top > 0) {
+            hero.moveUp();
+      }
+
+    document.getElementById('game').innerHTML = hero.getHeroElement();
+    setTimeout(start, 50)
+  }
+
+  start();
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function Mobile(id, name){
+    this.id=id;
+    this.name=name;
+    this.message = "";
+    this.bakery = 100;
+
+    this.setMessage = function (message){
+      this.message=message;
+      this.bakery -=1;
+    }
+    this.getMessage = function (){
+      return this.message;
+    }
+    this.getBakery = function (){
+        return this.bakery
+    }
+    this.senMessage = function (message,mobile,bakery){
+      mobile.setMessage(message);
+      mobile.getBakery(bakery);
+
+    }
+  }
+  let iphone = new Mobile(1,"Iphone");
+  let androi = new Mobile(2,"Samsung");
+  iphone.senMessage("tin nhắn iphone",androi);
+  iphone.senMessage("tin nhắn",androi);
+  let message = androi.getMessage();
+  let bakery = androi.getBakery();
+  console.log(message);
+  console.log(bakery)
+</script>
+</body>
+</html>

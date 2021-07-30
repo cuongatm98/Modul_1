@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="540px" height="400px" style="border: 1px solid #bf0000"></canvas>
+<p id="score">score: 0</p>
+</body>
+<script src="bong.js"></script>
+<script src="gach.js"></script>
+<script>
+    var gameover = false;
+
+    function draw() {
+        if (!gameover) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            vegach()
+            veBong()
+            vethanhbar()
+
+            if (bar.chuyentrai) {
+                bar.x -= bar.speed
+            } else if (bar.chuyenphai) {
+                bar.x += bar.speed
+            }
+            if (bar.x < 0) {
+                bar.x = 0
+            } else if (bar.x > canvas.width - bar.width) {
+                bar.x = canvas.width - bar.width
+            }
+            vachamcanh()
+            vachamvoithanhbar()
+            bongvachamvoigach()
+            toado()
+            //     endgam = false;
+            if (bong.y >= canvas.height - 10) {
+                gameover = true
+            }
+
+        requestAnimationFrame(draw);
+        }else {
+            alert("GAME OVER")
+        }
+    }
+
+    draw()
+</script>
+</html>

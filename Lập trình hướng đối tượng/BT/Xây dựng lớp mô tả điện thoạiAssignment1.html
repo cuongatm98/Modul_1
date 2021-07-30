@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  class Mobile {
+    constructor(name) {
+      this.battery = 100;
+      this.name = name;
+      this.message = '';
+      this.inBox = [];
+      this.outBox = [];
+      this.status = false;
+    }
+
+    checkOnOff() {
+      if (this.status === true) {
+        alert('điện thoại bật')
+      } else {
+        alert('điện thoại tắt')
+      }
+      this.battery--;
+    }
+
+    turnOn() {
+      this.status = true;
+      this.battery--;
+    }
+
+    turnOff() {
+      this.status = false;
+    }
+
+    chargeBattery() {
+      if (this.status !== true) {
+        alert('Điện thoai' + this.name + ' đang tắt không sử dụng được.');
+        return;
+      }
+      this.battery += 1;
+    }
+
+    writeMessage(txt) {
+      if (this.status !== true) {
+        alert('Điện thoai' + this.name + ' đang tắt không sử dụng được.');
+        return;
+      }
+      this.message = txt;
+      this.battery--;
+    }
+
+    sendMessage(phone) {
+      if (this.status !== true) {
+        alert('Điện thoai' + this.name + ' đang tắt không sử dụng được.');
+        return;
+      }
+      else {
+          phone.getOutBox().push(this.message);
+          this.getInBox().push(this.message);
+      }
+    }
+
+    getInBox() {
+      if (this.status !== true) {
+        alert('Điện thoai' + this.name + ' đang tắt không sử dụng được.');
+        return;
+      }
+      this.battery--;
+      return this.inBox;
+    }
+
+    getOutBox() {
+      if (this.status !== true) {
+        alert('Điện thoai' + this.name + ' đang tắt không sử dụng được.');
+        return;
+      }
+      this.battery--;
+      return this.outBox;
+    }
+  }
+  let iphone = new Mobile("Iphone");
+  let androi = new Mobile("Samsung");
+  iphone.turnOn();
+  androi.turnOn();
+  iphone.writeMessage("Đ mm")
+  iphone.sendMessage(androi);
+  let message = androi.getInBox();
+  console.log(message);
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+  function elemen(nameStar) {
+      let star = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair,Dubhe','Regulus'];
+      let stars = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+      for (let i = 0; i <= star.length-1; i++) {
+          if(nameStar === star[i]){
+              return "ngoi sao "+star[i] + " o chom sao " + stars[i]
+          }
+          else {
+              return "ko tim thay ngoi sao nao"
+          }
+      }
+  }
+  let nameStar = prompt("ten ngoi sao can tim")
+  document.write(elemen(nameStar));
+</script>
+</body>
+</html>
